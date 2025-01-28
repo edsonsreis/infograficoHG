@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IA da Senior</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <svg id="wheelSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1200" preserveAspectRatio="xMidYMid meet"></svg>
+    
+    <div id="linkPreview" style="position: fixed; bottom: 0; left: 0; padding: 5px; background: rgba(0, 0, 0, 0.7); color: #fff; font-size: 14px; visibility: hidden; z-index: 1000;"></div>
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2 id="modalTitle">Atraia os Melhores Talentos com a Solução da Senior</h2> <!-- Título será preenchido aqui -->
+                        <p id="modalText">Fernanda, gestora de RH de uma empresa em crescimento, enfrentava dificuldades para preencher uma vaga importante. O mercado estava competitivo e a descrição da vaga não atraía os candidatos ideais. Foi então que ela descobriu o módulo <strong>Gestão de Recrutamento e Seleção</strong> da solução <strong>Gestão de Pessoas | HCM da Senior</strong> e a ferramenta <strong>iAssist</strong>, que usa Inteligência Artificial para otimizar a criação de descrições de vaga.</p> <!-- Corpo será preenchido aqui -->
+                        <p>Com o uso do iAssist, Fernanda gerou uma descrição mais atraente e alinhada às necessidades do mercado. O resultado foi uma redução no tempo de contratação, com candidatos mais qualificados e entrevistas mais objetivas.</p>                    
+                        <a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8062&idcatalogo=4076&idcurso=12640&buscaSimples=true" target="_blank">Acesse o curso na UCS</a>
+                        <br>
+                        <a href="https://materiais.senior.com.br/hrassist?utm_campaign=mkt_redes_sociais_hcm&utm_source=linkedin&utm_medium=social&utm_content=redes_hrbp" target="_blank">Conheça a HR Assist</a>
+                        <br>
+                        <a href="https://www.senior.com.br/blog/divulgacao-de-vagas-estrategias-para-atrair-talentos" target="_blank">Estratégia para Atrair Talentos</a>
+                    </div>
+                    <!-- Imagens à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <img id="expandImage" src="images/1-ia-img-recruta-descricao-infografico.png" alt="Descrição de vaga 1" style="width: 100%; max-width: 500px; height: auto; cursor: pointer; margin-bottom: 10px;">
+                        <button id="nextImageButton" style="background-color: transparent; border: none; cursor: pointer;">
+                            <i id="arrowIcon" class="fas fa-arrow-right" style="font-size: 30px;"></i>
+                        </button>
+                        <button id="audioButton" style="margin-top: 15px; background-color: #1E9988; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                            <i class="fas fa-volume-up"></i> Ouvir descrição
+                        </button>
+                        <audio id="audioDescription" src="images/1-audio-descricao-da-vaga.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

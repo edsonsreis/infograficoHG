@@ -1,0 +1,287 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    max-width: 940px;
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.small-circle {
+    transition: r 0.2s ease;
+}
+
+.central-circle {
+    transition: fill 0.5s ease;
+}
+
+.circle-icon {
+    pointer-events: none;
+}
+
+.full-group {
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+}
+
+.interactive-circle {
+    cursor: pointer;
+}
+
+.line {
+    transition: stroke-width 0.2s ease, stroke 0.2s ease, stroke-dasharray 0.2s ease;
+}
+
+.main-text,
+.sub-text {
+    transition: opacity 0.3s ease;
+}
+
+
+
+/* styles.css */
+#genericModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#genericModal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#genericModal h2 {
+    margin: 0;
+}
+
+#genericModal button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f94144;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Círculos interativos */
+.interactive-circle {
+    cursor: pointer;
+}
+
+.small-circle {
+    transition: transform 0.3s ease-in-out;
+}
+
+.circle-icon {
+    pointer-events: none;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999; /* Mantenha o valor do z-index alto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #005f7f;
+}
+
+/* Estilo de texto */
+.main-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.sub-text {
+    font-size: 0.9em;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.text-with-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do link preview */
+#linkPreview {
+    font-size: 1em;
+    font-weight: bold;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+/* Círculo central */
+.central-circle {
+    transition: fill 0.3s ease;
+}
+
+/* Efeito de hover nos textos */
+.text-hover:hover {
+    opacity: 1 !important;
+}
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+
+
+/* Garantir que a sobreposição cubra a tela toda */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* Opacidade de fundo */
+    display: none; /* Inicialmente invisível */
+    z-index: 999; /* Garantir que o modal fique acima */
+}
+
+/* Garantir que o modal tenha um estilo adequado */
+.modal {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    max-width: 800px;
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 1000;
+    display: block;  /* Garanta que o modal seja mostrado quando a sobreposição estiver ativa */
+}
+
+/* Outros estilos para o modal e elementos internos */
+.modal_item_header {
+    background-color: #1E9988;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal_item_header_close {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.modal_item_content {
+    display: flex;
+    gap: 20px;
+}
