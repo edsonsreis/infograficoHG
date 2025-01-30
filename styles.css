@@ -1,12 +1,36 @@
 body, html {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+h1 {
+    margin: -70px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    color: #2d3748;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    z-index: 2;
+}
+
+
+h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 svg {
-    width: 100%;
+    width: 70%;
     height: auto;
-    max-width: 940px;
+    max-width: 1100px;
     display: block;
     margin: 0 auto;
     overflow: visible;
@@ -37,58 +61,26 @@ svg {
     transition: stroke-width 0.2s ease, stroke 0.2s ease, stroke-dasharray 0.2s ease;
 }
 
+
+/* Círculo central */
+.central-circle {
+    transition: fill 0.3s ease;
+}
+
 .main-text,
 .sub-text {
     transition: opacity 0.3s ease;
 }
 
 
-
-/* styles.css */
-#genericModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-
-#genericModal .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-}
-
-#genericModal h2 {
-    margin: 0;
-}
-
-#genericModal button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #f94144;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-
-
-
 /* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: white;
     margin: 0;
     padding: 0;
+        
+
 }
 
 /* Círculos interativos */
@@ -104,184 +96,187 @@ body {
     pointer-events: none;
 }
 
-/* Estilo do modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999; /* Mantenha o valor do z-index alto */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 500px;
-    max-width: 90%;
-    text-align: center;
-}
-
-.modal-content h2 {
-    margin-bottom: 20px;
-}
-
-.modal-content p {
-    margin-bottom: 20px;
-}
-
-.modal-content button {
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.modal-content button:hover {
-    background-color: #005f7f;
-}
-
-/* Estilo de texto */
-.main-text {
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: opacity 0.3s ease;
-}
-
-.sub-text {
-    font-size: 0.9em;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.text-with-shadow {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilo do link preview */
-#linkPreview {
-    font-size: 1em;
-    font-weight: bold;
-    color: #007bff;
-    cursor: pointer;
-    margin-top: 10px;
-    visibility: hidden;
-}
-
-/* Círculo central */
-.central-circle {
-    transition: fill 0.3s ease;
-}
-
-/* Efeito de hover nos textos */
-.text-hover:hover {
-    opacity: 1 !important;
-}
-
-
-
-
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal.show {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-
-
-
-
-/* Garantir que a sobreposição cubra a tela toda */
+/* Modal Styles */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);  /* Opacidade de fundo */
-    display: none; /* Inicialmente invisível */
-    z-index: 999; /* Garantir que o modal fique acima */
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: none;
+    z-index: 999;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Garantir que o modal tenha um estilo adequado */
 .modal {
     position: relative;
-    margin: auto;
-    padding: 20px;
-    background: #fff;
-    max-width: 800px;
-    max-height: 80%;
-    overflow-y: auto;
-    z-index: 1000;
-    display: block;  /* Garanta que o modal seja mostrado quando a sobreposição estiver ativa */
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: auto;
+    min-width: 300px;
+    max-width: 900px;
+    margin: 2rem auto;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    flex: 0 1 auto;
+}
+.modal_item {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Outros estilos para o modal e elementos internos */
 .modal_item_header {
-    background-color: #1E9988;
-    color: #fff;
-    padding: 10px;
+    background: linear-gradient(135deg, #1E9988 0%, #167267 100%);
+    color: #ffffff;
+    padding: 1.5rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal_item_header span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+.modal_item_header img {
+    height: 2rem;
+    width: auto;
 }
 
 .modal_item_header_close {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+}
+
+.modal_item_header_close:hover {
+    color: #ffffff;
 }
 
 .modal_item_content {
+    padding: 2rem;
     display: flex;
-    gap: 20px;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.modal_item_content p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.modal_item_content a {
+    display: inline-block;
+    color: #1E9988;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    margin-right: 1.5rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.modal_item_content a:hover {
+    color: #167267;
+    border-bottom-color: #167267;
+}
+
+/* Button Styles */
+button {
+    background-color: #1E9988;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #167267;
+    transform: translateY(-1px);
+}
+
+/* Image Styles */
+.modal_item_content img {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.modal_item_content img:hover {
+    transform: scale(1.02);
+}
+
+/* Interactive Elements */
+.interactive-circle {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.small-circle {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.central-circle {
+    transition: fill 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-text,
+.sub-text {
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal_item_content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .modal {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+
+    h1 {
+        font-size: 2rem;
+        left: 50px;
+    }
+}
+
+/* Animation for Modal Opening */
+.overlay[style*="flex"] .modal {
+    animation: modalSlideIn 0.3s ease-out forwards;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>IA da Senior</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.senior.com.br/lp/infografico-hcm-2023/og-image.png?v=2" />
+    <title>IA Senior</title>
+    <link rel="shortcut icon"
+    href="https://d2nytdlptrqhdi.cloudfront.net/wp-content/themes/senior-2019/content/assets/images/favicon.ico">
+<link rel="shortcut icon" sizes="32x32"
+    href="https://d2nytdlptrqhdi.cloudfront.net/wp-content/themes/senior-2019/content/assets/images/favicon.png">
+<link rel="preload" href="https://use.typekit.net/tdc4dck.css" as="style" onload="this.rel='stylesheet'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <h1>Infográfico <b>IA na Senior</b></h1>
+
     <svg id="wheelSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1200" preserveAspectRatio="xMidYMid meet"></svg>
     
     <div id="linkPreview" style="position: fixed; bottom: 0; left: 0; padding: 5px; background: rgba(0, 0, 0, 0.7); color: #fff; font-size: 14px; visibility: hidden; z-index: 1000;"></div>
 
+    
     <!-- Modal Structure -->
-    <div class="overlay" id="genericModal" style="display: none;">
+    <div class="overlay" id="genericModal0" style="display: none;">
         <div class="modal">
             <div class="modal_item">
                 <div class="modal_item_header" style="background:#1E9988;">
                     <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
                     <img src="images/icon-erp.svg" alt="Ícone ERP">
-                    <div class="modal_item_header_close" onclick="closeModal()">×</div>
+                    <div class="modal_item_header_close" onclick="closeModal0()">×</div>
                 </div>
                 <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
                     <!-- Texto à esquerda -->
@@ -33,23 +44,327 @@
                         <br>
                         <a href="https://www.senior.com.br/blog/divulgacao-de-vagas-estrategias-para-atrair-talentos" target="_blank">Estratégia para Atrair Talentos</a>
                     </div>
-                    <!-- Imagens à direita -->
-                    <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <img id="expandImage" src="images/1-ia-img-recruta-descricao-infografico.png" alt="Descrição de vaga 1" style="width: 100%; max-width: 500px; height: auto; cursor: pointer; margin-bottom: 10px;">
-                        <button id="nextImageButton" style="background-color: transparent; border: none; cursor: pointer;">
-                            <i id="arrowIcon" class="fas fa-arrow-right" style="font-size: 30px;"></i>
-                        </button>
-                        <button id="audioButton" style="margin-top: 15px; background-color: #1E9988; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-                            <i class="fas fa-volume-up"></i> Ouvir descrição
-                        </button>
-                        <audio id="audioDescription" src="images/1-audio-descricao-da-vaga.mp3"></audio>
-                    </div>
+                        <!-- Imagens à direita -->
+                        <div style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                            <img id="expandImage" src="images/1-ia-img-recruta-descricao-infografico.png" alt="Descrição de vaga 1" style="width: 100%; max-width: 500px; height: auto; cursor: pointer; margin-bottom: 10px; margin-top: 20px;">
+                            <!-- Botão de seta usando Font Awesome -->
+                            <button id="nextImageButton" style="background-color: transparent; border: none; cursor: pointer;">
+                                <i id="arrowIcon" class="fas fa-arrow-right" style="font-size: 30px;"></i> <!-- Ícone de seta -->
+                            </button>
+                            <!-- Botão de áudio -->
+                            <button id="audioButton" style="margin-top: 15px; background-color: #1E9988; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                                <i class="fas fa-volume-up"></i> Ouvir descrição
+                            </button>
+                            <!-- Elemento de áudio -->
+                            <audio id="audioDescription" src="images/1-audio-descricao-da-vaga.mp3"></audio>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 
+<!-- Modal para exibição da imagem -->
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <img id="modalImage" src="images/1-ia-img-recruta-descricao-infografico.png" alt="Descrição de vaga" style="max-width: 90%; max-height: 90%; cursor: pointer;">
+</div>
 
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal1" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal1()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>Como criar um PDI com o uso de IA</h2>
+                        <p>O módulo Gestão de Desempenho tem o objetivo de direcionar os objetivos individuais e estratégicos, contribuindo para: mensurar o desempenho de colaboradores, identificar as necessidades de capacitação e de adequação funcional, estimular o diálogo e o reconhecimento através do processo de feedback, contribuir para o desenvolvimento de gestores em relação à evolução das equipes.</p>
+                        <p>Procurando impulsionar a carreira, com a ferramenta de Inteligência Artificial do IAssist, você recebe sugestões de objetivos e ações mediante a definição de uma ou mais competências para montar seu PDI.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8061&idcatalogo=4076&idcurso=12639&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                        <p><a href="https://platform.senior.com.br/senior-x/#/Gest%C3%A3o%20de%20Pessoas%20%7C%20HCM/2/43c072c8-de8c-4c4c-81b8-5d383daa8dcd%2FGest%C3%A3o%20de%20desempenho%2FMeu%20desempenho%2FMeu%20PDI?category=frame&link=https:%2F%2Fhcm.senior.com.br%2F%23%2Femployee-management%2Findividual-development-goal%3Fexpand%3Dp%26role%3DEMPLOYEE&helpUrl=https:%2F%2Fdocumentacao.senior.com.br%2Fseniorxplatform%2Fmanual-do-usuario%2Fhcm%2F%23gestao-desempenho%2Fgestao-de-desempenho.htm&helpContext=&r=1" target="_blank">Demonstre na prática para o seu cliente</a></p>
+                    </div>
+            <!-- Imagem à direita -->
+            <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                <img id="toggleImage" src="images/pdi-v-final.gif" alt="Plano de Desenvolvimento Individual" style="width: 100%; max-width: 500px; height: auto; cursor: pointer; ">
+            </div>                
+        </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Modal para exibição da imagem -->
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000;">
+    <img id="modalImage" src="" alt="Imagem expandida" style="max-width: 90%; max-height: 90%; cursor: pointer;">
+</div>
+
+
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal2" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal2()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                <!-- Texto à esquerda -->
+                <div style="flex: 2;">
+                    <h2>[ERP] I.A - AgrodataLake: Centralizando informações de mercado para decisões inteligentes</h2>
+                    <p>A capacidade de tomar decisões com base em dados é fundamental para o sucesso das empresas na atualidade, incluindo o setor do Agronegócio.</p>
+                    <p>Como base nesta afirmação, apresentamos o <strong>Agro DataLake</strong>, um recurso centralizado projetado para a consulta de informações relacionadas ao Agronegócio. Este sistema inovador busca dados provenientes de várias fontes, consolidando-os em um único local. Esse processo simplificado facilita significativamente a tomada de decisões pelas empresas, proporcionando uma visão holística e integrada para orientar estrategicamente suas ações.</p>
+                    <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8054&idcatalogo=4076&idcurso=12632&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                </div>
+                <!-- Imagem à direita -->
+                <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                    <img src="images/3-ia-plataforma-fretes.png" alt="Descrição de vaga" style="width: 100%; max-width: 500px; height: auto; margin-top: 20px;">
+                </div>             
+                 </div>
+            </div>
+        </div>
+    </div>    
+
+
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal3" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal3()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                <!-- Texto à esquerda -->
+                <div style="flex: 2;">
+                    <h2>[ERP] I.A - Como o Analytics de Obra pode tornar a tomada de decisão mais rápida e assertiva</h2>
+                    <p>O <strong>Analytics de Obra</strong> é uma ferramenta que fornece ao responsável pela obra uma gestão eficiente, ágil e precisa em uma única tela, detalhando os processos da obra, controlando os custos e prazos através da evolução do orçamento, evitando assim desperdícios e imprevistos.</p>
+                    <p><strong>Resultado?</strong> Processos de gestão de obra mais rápidos e assertivos, com controle eficiente de custos e prazos.</p>
+                    <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8057&idcatalogo=4076&idcurso=12635&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                </div>
+                <!-- Imagem à direita -->
+                <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                    <img src="images/4-ia-analytics-de-obra.png" alt="Analytics de Obra" style="width: 100%; max-width: 500px; height: auto; margin-top: 20px;">
+                </div>          
+                 </div>
+            </div>
+        </div>
+    </div>     
+    
+    
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal4" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal4()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                <!-- Texto à esquerda -->
+                <div style="flex: 2;">
+                    <h2>[ERP] I.A - Geração de campanhas inteligentes utilizando a IA do CRM Senior</h2>
+                    <p>Automatize, reduza custos e tempo de produção. Planeje, controle e explore a indústria 4.0 com MES, cloud, cybersecurity e integração entre sistemas. Ganhe eficiência e competitividade.</p>
+                    <p><strong>Resultado?</strong> Campanhas mais inteligentes e eficientes, com redução de custos e aumento de competitividade.</p>
+                    <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8058&idcatalogo=4076&idcurso=12636&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                </div>
+                <!-- Imagem à direita -->
+                <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                    <img src="images/5-ia-crm.png" alt="Campanhas inteligentes com IA" style="width: 100%; max-width: 500px; height: auto;">
+                </div>     
+                 </div>
+            </div>
+        </div>
+    </div>        
+
+
+    <!-- Modal Structure -->
+    <div class="overlay" id="genericModal5" style="display: none;">
+        <div class="modal">
+            <div class="modal_item">
+                <div class="modal_item_header" style="background:#1E9988;">
+                    <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                    <img src="images/icon-erp.svg" alt="Ícone ERP">
+                    <div class="modal_item_header_close" onclick="closeModal5()">×</div>
+                </div>
+                <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                <!-- Texto à esquerda -->
+                <div style="flex: 2;">
+                    <h2>[ERP] I.A - Analisando os resultados das Safras com o Gestão Safra</h2>
+                    <p>Como podemos analisar o resultado de uma Safra utilizando o Gestão Safra? O <strong>Gestão de Safra</strong> é uma ferramenta de análise gerencial que se baseia em informações contáveis, financeiras e operacionais, que permite dar visibilidade ao ciclo produtivo de variadas culturas. Ele apresenta informações relevantes sobre a safra, facilitando assim a tomada de decisão.</p>
+                    <p><strong>Resultado?</strong> Análises mais precisas e assertivas para otimizar os processos produtivos e melhorar a gestão das safras.</p>
+                    <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8055&idcatalogo=4076&idcurso=12633&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                </div>
+                <!-- Imagem à direita -->
+                <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                    <img src="images/5-ia-gestao-de-safra.png" alt="Gestão Safra" style="width: 100%; max-width: 500px; height: auto;">
+                </div>    
+                 </div>
+            </div>
+        </div>
+    </div>         
+
+
+
+        <!-- Modal Structure -->
+        <div class="overlay" id="genericModal6" style="display: none;">
+            <div class="modal">
+                <div class="modal_item">
+                    <div class="modal_item_header" style="background:#1E9988;">
+                        <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                        <img src="images/icon-erp.svg" alt="Ícone ERP">
+                        <div class="modal_item_header_close" onclick="closeModal6()">×</div>
+                    </div>
+                    <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>[ERP] I.A - Insights ERP XT: O ERP falando com você</h2>
+                        <p>Esta ferramenta desempenha um papel fundamental na otimização de processos e na redução de riscos operacionais. O <strong>Insight do ERP XT</strong> atua de maneira proativa, destacando pontos críticos nas rotinas administrativas e oferecendo ferramentas para aprimorar a eficiência operacional.</p>
+                        <p><strong>Resultado?</strong> Processos administrativos mais ágeis e uma gestão mais eficaz com insights poderosos diretamente no seu ERP.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8059&idcatalogo=4076&idcurso=12637&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                    </div>
+                    <!-- Imagem à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/2-ia-img-aderencia.png" alt="Insights ERP XT" style="width: 100%; max-width: 500px; height: auto;">
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>   
+    
+
+        <!-- Modal Structure -->
+        <div class="overlay" id="genericModal7" style="display: none;">
+            <div class="modal">
+                <div class="modal_item">
+                    <div class="modal_item_header" style="background:#1E9988;">
+                        <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                        <img src="images/icon-erp.svg" alt="Ícone ERP">
+                        <div class="modal_item_header_close" onclick="closeModal7()">×</div>
+                    </div>
+                    <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>Analytics ERP</h2>
+                        <p><strong>Analytics ERP</strong> serve como uma central para monitorar e gerenciar sua operação. De maneira intuitiva e descomplicada, permite que os usuários-chave e gestores obtenham uma visão abrangente da saúde operacional, capacitando-os a tomar decisões ainda mais precisas.</p>
+                        <p>São 8 painéis de indicadores disponibilizados para auxiliar sua gestão de Compras, Contábil, Faturamento, Financeiro, Fiscal, Gerencial, Produção e Vendas. Para cada painel, há indicadores específicos que apoiam uma gestão orientada por dados. No painel Contábil, você pode utilizar a Inteligência Artificial para te auxiliar na análise financeira.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8056&idcatalogo=4076&idcurso=12634&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                    </div>
+                    <!-- Imagem à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/7-ia-erp.png" alt="Analytics ERP" style="width: 100%; max-width: 500px; height: auto;">
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>         
+    
+        <!-- Modal Structure -->
+        <div class="overlay" id="genericModal8" style="display: none;">
+            <div class="modal">
+                <div class="modal_item">
+                    <div class="modal_item_header" style="background:#1E9988;">
+                        <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                        <img src="images/icon-erp.svg" alt="Ícone ERP">
+                        <div class="modal_item_header_close" onclick="closeModal8()">×</div>
+                    </div>
+                    <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>[ERP] I.A - Marketing Intelligence: Transforme insights em receitas e alavanque as suas vendas</h2>
+                        <p>Essa solução não só aprimora a busca pelo cliente ideal, mas também facilita a exportação de informações para ferramentas-chave, como Microsoft Excel e o CRM da Senior.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8060&idcatalogo=4076&idcurso=12638&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                    </div>
+                    <!-- Imagem à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/8-ia-marketing-intelligence.png" alt="Marketing Intelligence" style="width: 100%; max-width: 500px; height: auto;">
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>         
+
+
+
+        <!-- Modal Structure -->
+        <div class="overlay" id="genericModal9" style="display: none;">
+            <div class="modal">
+                <div class="modal_item">
+                    <div class="modal_item_header" style="background:#1E9988;">
+                        <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                        <img src="images/icon-erp.svg" alt="Ícone ERP">
+                        <div class="modal_item_header_close" onclick="closeModal9()">×</div>
+                    </div>
+                    <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>[LOGÍSTICA] I.A - AI logistics: Utilizando a Inteligência artificial para potencializar a sua operação de Armazenagem e transporte</h2>
+                        <p>Veja como simplificar o acompanhamento das operações, através de dashboards visuais e análise de dados por meio de inteligência artificial. Com uma interface intuitiva, o AI Logistics é uma solução indispensável para gestores e equipes logísticas que buscam aprimorar sua eficiência e competitividade.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8064&idcatalogo=4076&idcurso=12642&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                    </div>
+                    <!-- Imagem à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/11-ai-logistics.png" alt="AI Logistics" style="width: 100%; max-width: 500px; height: auto;">
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>     
+        
+        
+        <!-- Modal Structure -->
+        <div class="overlay" id="genericModal10" style="display: none;">
+            <div class="modal">
+                <div class="modal_item">
+                    <div class="modal_item_header" style="background:#1E9988;">
+                        <span id="modalHeader">HCM</span> <!-- Título será preenchido aqui -->
+                        <img src="images/icon-erp.svg" alt="Ícone ERP">
+                        <div class="modal_item_header_close" onclick="closeModal10()">×</div>
+                    </div>
+                    <div class="modal_item_content" style="display: flex; align-items: center; gap: 20px;">
+                    <!-- Texto à esquerda -->
+                    <div style="flex: 2;">
+                        <h2>[LOGÍSTICA] I.A - Como a IA pode ajudar a obter insights sobre os dados do armazém</h2>
+                        <p>A Senior oferece soluções logísticas integradas e sincronizadas com seu ERP, revolucionando o agendamento de carga, eliminando erros e fraudes, e monitorando a frota em tempo real. Simplificamos a administração e aprimoramos a gestão de armazéns, garantindo precisão no estoque. Concentre-se no crescimento enquanto cuidamos dos detalhes operacionais.</p>
+                        <p><a href="https://ucsonline.senior.com.br/lms/#/home/curso/?secao=8065&idcatalogo=4076&idcurso=12643&buscaSimples=true" target="_blank">Acesse o curso na UCS</a></p>
+                    </div>
+                    <!-- Imagem à direita -->
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/12-plataforma-fretes.png" alt="AI Logistics" style="width: 100%; max-width: 500px; height: auto;">
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </div>            
+
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) { return; }
+                js = d.createElement(s); js.id = id;
+                js.src = "https://cdn.tecnologia.senior.com.br/platform/botfactory/conversation/production/bundle.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'botfactory-sdk'));
+            (function () {
+                window.onload = function () {
+                    window.BotFactory.init({
+                        appKey: "KzkXRkbqS0aJNeii6h34d/WuMGbL1gLDLOtJJ64xQWovlpgCTOqgEJs15J4mn87JMINdeNstWYSmQHjHzvcNLg==",
+                        restUrl: "https://platform.senior.com.br/t/senior.com.br/bridge/1.0/rest/"
+                    });
+                }
+            })();
+        </script>        
+            
+    <script src="jquery.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

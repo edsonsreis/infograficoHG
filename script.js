@@ -53,6 +53,19 @@ const smallCircles = [];
 const allMainTexts = [];
 const allSubtexts = [];
 
+document.addEventListener('click', (event) => {
+    const modals = document.querySelectorAll('.overlay');
+    modals.forEach(modal => {
+        if (modal.style.display === "flex") {
+            const modalContent = modal.querySelector('.modal');
+            if (!modalContent.contains(event.target) && event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+});
+
+
 function createWheel() {
     svg.innerHTML = '';
 
@@ -253,10 +266,136 @@ function createWheel() {
     }
 }
 
-// Função genérica para abrir o modal
+// Textos personalizados para os modais
+const modalContents = [
+    "", // O primeiro modal (Recrutamento e Seleção) será tratado separadamente com um HTML fixo
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+];
+
+// Função para abrir o modal
 function openGenericModal(index) {
+    // Se for o primeiro item (Recrutamento e Seleção), usa a estrutura HTML existente
+    if (index === 0) {
+        const modal = document.getElementById("genericModal0");
+        if (modal) {
+            modal.style.display = "flex"; // Mostra o modal fixo
+        }
+        return;
+    }
+    
+    // Se for o primeiro item (Gestão de Desempenho), usa a estrutura HTML existente
+    if (index === 1) {
+        const modal = document.getElementById("genericModal1");
+        if (modal) {
+            modal.style.display = "flex"; // Mostra o modal fixo
+        }
+        return;
+    }    
+
+    // Se for o primeiro item (AgroDataLake), usa a estrutura HTML existente
+    if (index === 2) {
+        const modal = document.getElementById("genericModal2");
+        if (modal) {
+            modal.style.display = "flex"; // Mostra o modal fixo
+        }
+        return;
+    }    
+    
+        // Se for o primeiro item (ERP Analytics de Obra), usa a estrutura HTML existente
+        if (index === 3) {
+            const modal = document.getElementById("genericModal3");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }  
+
+
+        // Se for o primeiro item (CRM), usa a estrutura HTML existente
+        if (index === 4) {
+            const modal = document.getElementById("genericModal4");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }  
+
+        // Se for o primeiro item (Gestão de Safras), usa a estrutura HTML existente
+        if (index === 5) {
+            const modal = document.getElementById("genericModal5");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }          
+
+
+        // Se for o primeiro item (Insights ERP), usa a estrutura HTML existente
+        if (index === 6) {
+            const modal = document.getElementById("genericModal6");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }     
+        
+        
+        // Se for o primeiro item (Analytics ERP), usa a estrutura HTML existente
+        if (index === 7) {
+            const modal = document.getElementById("genericModal7");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }  
+        
+        
+        // Se for o primeiro item (Marketing Intelligence), usa a estrutura HTML existente
+        if (index === 8) {
+            const modal = document.getElementById("genericModal8");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }   
+        
+        
+        // Se for o primeiro item (Marketing Intelligence), usa a estrutura HTML existente
+        if (index === 9) {
+            const modal = document.getElementById("genericModal9");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }  
+        
+        // Se for o primeiro item (Marketing Intelligence), usa a estrutura HTML existente
+        if (index === 10) {
+            const modal = document.getElementById("genericModal10");
+            if (modal) {
+                modal.style.display = "flex"; // Mostra o modal fixo
+            }
+            return;
+        }             
+
+    // Se um modal já estiver aberto, remove antes de criar um novo
+    const existingModal = document.getElementById('dynamicModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    // Criar modal dinâmico para os outros itens
     const modal = document.createElement('div');
-    modal.setAttribute('id', 'genericModal');
+    modal.setAttribute('id', 'dynamicModal');
     modal.style.position = 'fixed';
     modal.style.top = '0';
     modal.style.left = '0';
@@ -268,6 +407,7 @@ function openGenericModal(index) {
     modal.style.justifyContent = 'center';
     modal.style.zIndex = '9999';
 
+    // Criar conteúdo do modal
     const modalContent = document.createElement('div');
     modalContent.style.backgroundColor = '#fff';
     modalContent.style.padding = '20px';
@@ -275,14 +415,17 @@ function openGenericModal(index) {
     modalContent.style.width = '80%';
     modalContent.style.maxWidth = '600px';
 
+    // Título do modal
     const modalTitle = document.createElement('h2');
-    modalTitle.textContent = circleTexts[index]; // Título baseado no texto do círculo
+    modalTitle.textContent = circleTexts[index]; // Nome do produto
     modalContent.appendChild(modalTitle);
 
+    // Texto do modal (conteúdo específico)
     const modalText = document.createElement('p');
-    modalText.textContent = `Informações detalhadas sobre o processo relacionado a: ${circleTexts[index]}.`; // Conteúdo personalizado
+    modalText.textContent = modalContents[index] || "Conteúdo não disponível.";
     modalContent.appendChild(modalText);
 
+    // Botão de fechar
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Fechar';
     closeButton.style.padding = '10px 20px';
@@ -295,13 +438,200 @@ function openGenericModal(index) {
     closeButton.addEventListener('click', () => {
         modal.remove();
     });
-    modalContent.appendChild(closeButton);
 
+    modalContent.appendChild(closeButton);
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
 }
 
+// Função para fechar o modal fixo (Recrutamento e Seleção)
+function closeModal0() {
+    const modal = document.getElementById("genericModal0");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Função para fechar o modal fixo (Gestão de Desempenho)
+function closeModal1() {
+    const modal = document.getElementById("genericModal1");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (AgroDataLake)
+function closeModal2() {
+    const modal = document.getElementById("genericModal2");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (ERP Analytics de Obra)
+function closeModal3() {
+    const modal = document.getElementById("genericModal3");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (CRM)
+function closeModal4() {
+    const modal = document.getElementById("genericModal4");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (Gestão de Safras)
+function closeModal5() {
+    const modal = document.getElementById("genericModal5");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (Insights ERP)
+function closeModal6() {
+    const modal = document.getElementById("genericModal6");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (Analytics ERP)
+function closeModal7() {
+    const modal = document.getElementById("genericModal7");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (IA Logistics)
+function closeModal8() {
+    const modal = document.getElementById("genericModal8");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Função para fechar o modal fixo (Marketing Intelligence)
+function closeModal9() {
+    const modal = document.getElementById("genericModal9");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Função para fechar o modal fixo (Marketing Intelligence)
+function closeModal10() {
+    const modal = document.getElementById("genericModal10");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
 // Atualiza a criação da roda em cada redimensionamento da janela
 window.addEventListener('resize', createWheel);
+
+
+
+const expandImage = document.getElementById('expandImage');
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const nextImageButton = document.getElementById('nextImageButton');
+const arrowIcon = document.getElementById('arrowIcon');
+const audioButton = document.getElementById('audioButton');
+const audioDescription = document.getElementById('audioDescription');
+
+// Variáveis de imagens
+const images = [
+    "images/1-ia-img-recruta-descricao-infografico.png",
+    "images/1-ia-img-recruta-descricao.png"
+];
+let currentImageIndex = 0;
+
+// Alternar estado de exibição do modal ao clicar na imagem
+expandImage.addEventListener('click', () => {
+    if (imageModal.style.display === 'none' || imageModal.style.display === '') {
+        imageModal.style.display = 'flex';
+        modalImage.src = expandImage.src; // Exibe a imagem inicial no modal
+    } else {
+        imageModal.style.display = 'none';
+    }
+});
+
+// Fechar o modal ao clicar na imagem expandida
+modalImage.addEventListener('click', () => {
+    imageModal.style.display = 'none';
+});
+
+// Trocar a imagem ao clicar na seta
+nextImageButton.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length; // Altera o índice de imagem
+    expandImage.src = images[currentImageIndex]; // Troca a imagem mostrada
+    modalImage.src = expandImage.src; // Atualiza a imagem no modal
+
+    // Alternar a seta
+    if (currentImageIndex === 0) {
+        arrowIcon.classList.remove('fa-arrow-left');
+        arrowIcon.classList.add('fa-arrow-right'); // Muda para seta direita
+    } else {
+        arrowIcon.classList.remove('fa-arrow-right');
+        arrowIcon.classList.add('fa-arrow-left'); // Muda para seta esquerda
+    }
+});
+
+// Reproduzir ou pausar o áudio ao clicar no botão
+audioButton.addEventListener('click', () => {
+    if (audioDescription.paused) {
+        audioDescription.play();
+    } else {
+        audioDescription.pause();
+        audioDescription.currentTime = 0;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleImage = document.getElementById('toggleImage'); // Seleciona a imagem que será clicada para abrir o modal
+    const imageModal = document.getElementById('imageModal'); // Seleciona o modal
+    const modalImage = document.getElementById('modalImage'); // Seleciona a imagem dentro do modal
+    
+    // Alternar a visibilidade do modal ao clicar na imagem original
+    toggleImage.addEventListener('click', () => {
+        // Define a imagem do modal para a imagem clicada
+        modalImage.src = toggleImage.src;
+
+        if (imageModal.style.display === 'none' || imageModal.style.display === '') {
+            imageModal.style.display = 'flex'; // Exibe o modal
+        } else {
+            imageModal.style.display = 'none'; // Fecha o modal
+        }
+    });
+    
+    // Fechar o modal ao clicar em qualquer parte da tela, incluindo a imagem
+    imageModal.addEventListener('click', () => {
+        imageModal.style.display = 'none'; // Fecha o modal
+    });
+
+    // Impede que o clique na imagem dentro do modal feche o modal
+    modalImage.addEventListener('click', (event) => {
+        event.stopPropagation(); // Impede o fechamento ao clicar na imagem dentro do modal
+    });
+});
+
+
 
 createWheel();
